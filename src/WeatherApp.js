@@ -8,12 +8,13 @@ const WeatherApp = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSearch = async () => {
+    if (!city) return; // Ensure city is not empty
     setLoading(true);
-    setWeather(null); 
+    setWeather(null); // Clear previous weather data
     try {
       const response = await axios.get('https://api.weatherapi.com/v1/current.json', {
         params: {
-          key: '22bae9a5d6d543b0a6423903243105', 
+          key: 'Your_API_KEY', // Replace with your actual API key
           q: city,
         },
       });
