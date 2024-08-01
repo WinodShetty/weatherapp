@@ -13,7 +13,7 @@ const WeatherApp = () => {
     try {
       const response = await axios.get('https://api.weatherapi.com/v1/current.json', {
         params: {
-          key: 'Your_API_KEY', // Replace with your actual API key
+          key: '22bae9a5d6d543b0a6423903243105', 
           q: city,
         },
       });
