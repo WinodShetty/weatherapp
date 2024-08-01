@@ -9,7 +9,7 @@ const WeatherApp = () => {
 
   const handleSearch = async () => {
     setLoading(true);
-    setWeather(null);
+    setWeather(null); 
     try {
       const response = await axios.get('https://api.weatherapi.com/v1/current.json', {
         params: {
@@ -37,7 +37,7 @@ const WeatherApp = () => {
         />
         <button onClick={handleSearch}>Search</button>
       </div>
-      {loading && <p>Loading data…</p>}
+      {loading && <p className="loading">Loading data…</p>}
       {weather && (
         <div className="weather-cards">
           <div className="weather-card">
