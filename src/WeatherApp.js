@@ -11,6 +11,7 @@ const WeatherApp = () => {
     if (!city) return; // Ensure city is not empty
     setLoading(true);
     setWeather(null); // Clear previous weather data
+    console.log('Loading started'); // Debugging log
     try {
       const response = await axios.get('https://api.weatherapi.com/v1/current.json', {
         params: {
@@ -19,10 +20,12 @@ const WeatherApp = () => {
         },
       });
       setWeather(response.data);
+      console.log('Weather data fetched', response.data); // Debugging log
     } catch (error) {
       alert('Failed to fetch weather data');
     } finally {
       setLoading(false);
+      console.log('Loading finished'); // Debugging log
     }
   };
 

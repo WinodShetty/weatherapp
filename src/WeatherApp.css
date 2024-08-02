@@ -5,7 +5,7 @@
   color: white;
   padding: 20px;
   border-radius: 10px;
-  max-width: 600px; /* Adjusted for better horizontal space */
+  max-width: 600px;
   margin: auto;
   position: relative;
 }
@@ -52,9 +52,9 @@ button:hover {
 .weather-cards {
   display: flex;
   justify-content: space-around;
-  flex-wrap: nowrap; /* Ensures cards are displayed in a single row */
+  flex-wrap: nowrap;
   margin-top: 20px;
-  overflow-x: auto; /* Allows horizontal scrolling if needed */
+  overflow-x: auto;
 }
 
 .weather-card {
@@ -62,10 +62,10 @@ button:hover {
   color: #333333;
   padding: 10px;
   border-radius: 5px;
-  width: 45%; /* Adjusted to fit better in a row */
+  width: 20%; /* Adjusted to fit better in a row */
   margin: 10px;
   text-align: center;
-  flex: 0 0 auto; /* Prevents shrinking */
+  flex: 0 0 auto;
 }
 
 .weather-card h2 {
