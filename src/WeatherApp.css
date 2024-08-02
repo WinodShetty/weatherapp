@@ -34,7 +34,6 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin: 10px;
 }
 
 button:hover {
@@ -66,7 +65,7 @@ button:hover {
   width: 45%; /* Adjusted to fit better in a row */
   margin: 10px;
   text-align: center;
-  /* flex: 0 0 auto; Prevents shrinking */
+  flex: 0 0 auto; /* Prevents shrinking */
 }
 
 .weather-card h2 {

@@ -60,7 +60,7 @@ const WeatherApp = () => {
           </div>
         )}
       </div>
-      {loading && <p className="loading">'Loading data…'</p>}
+      {loading && <p className="loading">Loading data…</p>}
     </div>
   );
 };
