@@ -14,7 +14,7 @@ const WeatherApp = () => {
     try {
       const response = await axios.get('https://api.weatherapi.com/v1/current.json', {
         params: {
-          key: 'Your_API_KEY', // Replace with your actual API key
+          key: '22bae9a5d6d543b0a6423903243105', // Replace with your actual API key
           q: city,
         },
       });
@@ -29,7 +29,7 @@ const WeatherApp = () => {
   return (
     <div className="weather-app">
       <h1>Weather App</h1>
-      <div>
+      <div className="search-container">
         <input
           type="text"
           value={city}
@@ -42,11 +42,20 @@ const WeatherApp = () => {
       {weather && (
         <div className="weather-cards">
           <div className="weather-card">
-            <h2>{weather.location.name}</h2>
-            <p>Temperature: {weather.current.temp_c}°C</p>
-            <p>Humidity: {weather.current.humidity}%</p>
-            <p>Condition: {weather.current.condition.text}</p>
-            <p>Wind Speed: {weather.current.wind_kph} kph</p>
+            <p>Temperature</p>
+            <h2>{weather.current.temp_c}°C</h2>
+          </div>
+          <div className="weather-card">
+            <p>Humidity</p>
+            <h2>{weather.current.humidity}%</h2>
+          </div>
+          <div className="weather-card">
+            <p>Condition</p>
+            <h2>{weather.current.condition.text}</h2>
+          </div>
+          <div className="weather-card">
+            <p>Wind Speed</p>
+            <h2>{weather.current.wind_kph} kph</h2>
           </div>
         </div>
       )}
