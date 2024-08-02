@@ -42,6 +42,7 @@ const WeatherApp = () => {
           />
           <button onClick={handleSearch}>Search</button>
         </div>
+        {loading && <p className="loading">Loading data…</p>}
         {weather && (
           <div className="weather-cards">
             <div className="weather-card">
@@ -63,7 +64,6 @@ const WeatherApp = () => {
           </div>
         )}
       </div>
-      {loading && <p className="loading">Loading data…</p>}
     </div>
   );
 };
