@@ -8,24 +8,24 @@ const WeatherApp = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSearch = async () => {
-    if (!city) return; // Ensure city is not empty
+    if (!city) return; 
     setLoading(true);
-    setWeather(null); // Clear previous weather data
-    console.log('Loading started'); // Debugging log
+    setWeather(null); 
+    console.log('Loading started'); 
     try {
       const response = await axios.get('https://api.weatherapi.com/v1/current.json', {
         params: {
-          key: '22bae9a5d6d543b0a6423903243105', // Replace with your actual API key
+          key: '22bae9a5d6d543b0a6423903243105', 
           q: city,
         },
       });
       setWeather(response.data);
-      console.log('Weather data fetched', response.data); // Debugging log
+      console.log('Weather data fetched', response.data); 
     } catch (error) {
       alert('Failed to fetch weather data');
     } finally {
       setLoading(false);
-      console.log('Loading finished'); // Debugging log
+      console.log('Loading finished'); 
     }
   };
 
