@@ -1,12 +1,17 @@
-.weather-app {
+.weather-app-container {
   text-align: center;
   font-family: Arial, sans-serif;
   background-color: #2e3a46;
   color: white;
   padding: 20px;
   border-radius: 10px;
-  max-width: 500px;
+  max-width: 600px; /* Adjusted for better horizontal space */
   margin: auto;
+  position: relative;
+}
+
+.weather-app {
+  background-color: #2e3a46;
 }
 
 .search-container {
@@ -29,6 +34,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin: 10px;
 }
 
 button:hover {
@@ -36,15 +42,20 @@ button:hover {
 }
 
 .loading {
-  margin-top: 10px;
+  position: absolute;
+  top: calc(100% + 10px);
+  width: 100%;
+  left: 0;
+  text-align: center;
   font-size: 16px;
 }
 
 .weather-cards {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Ensures cards are displayed in a single row */
   margin-top: 20px;
+  overflow-x: auto; /* Allows horizontal scrolling if needed */
 }
 
 .weather-card {
@@ -52,9 +63,10 @@ button:hover {
   color: #333333;
   padding: 10px;
   border-radius: 5px;
-  width: 45%;
+  width: 45%; /* Adjusted to fit better in a row */
   margin: 10px;
   text-align: center;
+  /* flex: 0 0 auto; Prevents shrinking */
 }
 
 .weather-card h2 {

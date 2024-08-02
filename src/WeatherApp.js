@@ -27,38 +27,40 @@ const WeatherApp = () => {
   };
 
   return (
-    <div className="weather-app">
-      <h1>Weather App</h1>
-      <div className="search-container">
-        <input
-          type="text"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          placeholder="Enter city name"
-        />
-        <button onClick={handleSearch}>Search</button>
+    <div className="weather-app-container">
+      <div className="weather-app">
+        <h1>Weather App</h1>
+        <div className="search-container">
+          <input
+            type="text"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            placeholder="Enter city name"
+          />
+          <button onClick={handleSearch}>Search</button>
+        </div>
+        {weather && (
+          <div className="weather-cards">
+            <div className="weather-card">
+              <p>Temperature</p>
+              <h2>{weather.current.temp_c}°C</h2>
+            </div>
+            <div className="weather-card">
+              <p>Humidity</p>
+              <h2>{weather.current.humidity}%</h2>
+            </div>
+            <div className="weather-card">
+              <p>Condition</p>
+              <h2>{weather.current.condition.text}</h2>
+            </div>
+            <div className="weather-card">
+              <p>Wind Speed</p>
+              <h2>{weather.current.wind_kph} kph</h2>
+            </div>
+          </div>
+        )}
       </div>
       {loading && <p className="loading">Loading data…</p>}
-      {weather && (
-        <div className="weather-cards">
-          <div className="weather-card">
-            <p>Temperature</p>
-            <h2>{weather.current.temp_c}°C</h2>
-          </div>
-          <div className="weather-card">
-            <p>Humidity</p>
-            <h2>{weather.current.humidity}%</h2>
-          </div>
-          <div className="weather-card">
-            <p>Condition</p>
-            <h2>{weather.current.condition.text}</h2>
-          </div>
-          <div className="weather-card">
-            <p>Wind Speed</p>
-            <h2>{weather.current.wind_kph} kph</h2>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
